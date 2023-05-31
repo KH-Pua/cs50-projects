@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+
+<main class="container py-5 text-center">
+     <form action="/buy" method="post">
+        <div class="m-3">
+            <input type="text" class="form-control mx-auto w-auto" autofocus autocomplete="off" name="symbol" placeholder="Symbol">
+        </div>
+        <div class="m-3">
+              <input type="number" class="form-control mx-auto w-auto" min="1" name="shares" placeholder="Share Quantity">
+        </div>
+        <button class="btn btn-primary" type="submit">Buy</button>
+     </form>
+</main>
+
+{% endblock %}

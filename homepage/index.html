@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<!-- 4 html pages-->
+<!-- 10 distinct html tags, besides html, head, body, title.-->
+<!-- 1)header 2)footer 3)nav 4)section 5)aside 6)div 7)a 8)img 9)ul 10)li 11)p -->
+<!-- At least 1 bootstrap feature-->
+<!-- 1 stylesheet file with 5 different CSS selectors-->
+<!-- At least 1 Javascript features-->
+
+<!--Parent Layout
+    grid-area: XXX;
+
+    Layout
+    display: grid | flex | inline | block | inline-block | inline-grid | inline-flex ;
+    align-items: center | left | right | top | bottom;
+    gap: 10px;
+    grid-template-areas:
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center | left | right | top | bottom;
+
+    Positioning
+    position: absolute | relative | sticky | static | fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    Box Model
+    box-sizing: border-box;
+    width: 100px
+    height: 100px
+    inline-size: 100px;
+    box-size: 100px;
+    margin: 10px;
+    padding: 10px;
+
+    Display
+    background-color: red;
+    border: 10px black;
+    color: white;
+    font-size: 10px;
+    font-family: san-serif;
+    font-style: bold | normal | italic;
+
+-->
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"/>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+        <!-- <link href="styles-headerfooter.css" rel="stylesheet"> -->
+        <!-- <link rel="stylesheet" href="styles-homepage.css"> -->
+
+        <script>
+            //When Click, 1) Background turns black 2) Fonts turns white
+            function darkmodeFunction() {
+                var element = document.body;
+                element.dataset.bsTheme = element.dataset.bsTheme == "light" ? "dark" : "light";
+            }
+            //if (element.dataset.bsTheme === dark){
+                //let btndrk = doucment.quarySelector(#btn-drkmode);
+                //btndrk.classList.add('bi-moon');
+                //btndrk.classList.add('bi-moon-fill');
+            //} else {
+                //let btnlight = doucment.quarySelector(#btn-drkmode);
+                //btndrk.classList.remove('bi-moon-fill');
+                //btndrk.classList.add('bi-moon-fill');
+            //}
+
+        </script>
+
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>Hello, and welcome.</title>
+    </head>
+
+    <body data-bs-theme="light">
+        <header>
+            <!-- Navbar-->
+            <nav class="navbar navbar-expand-md navbar-light">
+                <div class="container">
+
+                    <!--Navbar logo-->
+                    <a href="index.html" class="navbar-brand">
+                        <span class="h1 fw-bold text-dark-emphasis">
+                            kh.
+                        </span>
+                    </a>
+
+                    <!-- Navbar side icon during small screen size-->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" id="dropdownMenuButtonDark"
+                    data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle-navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+
+                    <!-- Navbar link -->
+                    <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item me-5">
+                                    <a href="about.html" class="nav-link">About</a>
+                            </li>
+                            <li class="nav-item me-5">
+                                    <a href="projects.html" class="nav-link">Projects</a>
+                            </li>
+                            <li class="nav-item me-5">
+                                    <a href="contact.html" class="nav-link">Contact</a>
+                            </li>
+                            <!-- Dark Mode icon -->
+                            <li class="nav-item me-5 d-inline">
+                                <button class="btn" onclick="darkmodeFunction()">
+                                    <i class="bi bi-moon-fill" id="btn-drkmode"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+            <!--  <<<<<<<< OLD HEADER FILE >>>>>>>>>>
+                <div class="wrapper">
+                <nav>
+                    //<img src="logo.svg" alt="kh-logo" width="XX" height="XX">
+                    <div class="logo">
+                        <a href="homepage.html">kh.</a>
+                    </div>
+                    <ul class="nav-items">
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+                        <li>
+                            <a href="projects.html">Projects</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            -->
+
+        <section id="intro" class="my-5">
+            <div class="container-lg">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-md-5 text-center text-md-start">
+                        <p>Hi, my name is</p>
+                        <h1>Kee Hui</h1>
+                        <h3>A Design Architect that Codes</h3>
+                        <p class="mx-sm-5 mb-5 mx-md-0">I'm a front-end software engineer that comes from architecture background. I love to explore both design and tech domains.</p>
+                    </div>
+
+                    <div class="col-sm-5 text-center d-block">
+                        <img class="img-thumbnail img-responsive rounded mx-auto" src="/Profile_PKH.jpg" alt="profile">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--
+        <section class="main-container">
+            <div class="wrapper">
+                <div class="body1">
+                    <div class="paragraph">
+                        <h1>Hi, my name is </h1>
+                        <h2>Kee Hui</h2>
+                        <h3>A Design Architect that Codes.</h3>
+                        <p> I'm a front-end software engineer that comes from architecture background. I love to explore both design and tech domains.</p>
+                    </div>
+
+                    <div class="image">
+                        <img src="#" alt="kh_image">
+                    </div>
+                </div>
+            </div>
+        </section>
+        -->
+
+
+        <footer class="page-footer">
+            <div class="container justify-content-center align-items-center text-center">
+                <p class="my-3 fw-light">Copywright &copy, Design and Built by kh.</p>
+            </div>
+        </footer>
+
+        <!--
+        <footer class="footer-container">
+            <div class="wrapper">
+                <p class="footer-container">
+                    Copywright C, Design and Built by KH.
+                </p>
+            </div>
+        </footer>
+        -->
+
+
+
+    </body>
+</html>

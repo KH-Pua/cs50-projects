@@ -1,0 +1,13 @@
+.wrapper{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.main-container{
+    background: #FFFFFF;
+    background size: cover;
+    height: calc(100vh - 72px - 24px);
+    display: flex;
+    align-items: center;
+    font-family: "Segoe UI";
+}

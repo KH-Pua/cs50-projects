@@ -1,0 +1,40 @@
+.main-container{
+    background: #F5A05C;
+    background-size: cover;
+    height: calc(100vh - 72px - 24px);
+    display: flex;
+    align-items: center;
+}
+
+.body1{
+    font-family: Poppins;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.paragraph h1{
+    font-size: 20px;
+    line-height: 35px;
+    color: #021718;
+}
+
+.paragraph h2{
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 64px;
+    color: #021718;
+}
+
+.paragraph h3{
+    font-size: 20px;
+    line-height: 35px;
+    color: #021718;
+    margin-bottom: 24px;
+}
+
+.body1 p{
+    font-size: 20px;
+    line-height: 35px;
+    color: #021718;
+    width: 650px;
+}

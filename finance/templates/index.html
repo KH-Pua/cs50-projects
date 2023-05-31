@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{#
+    {% if referrer_path == 'buy' %}
+        <header>
+            <div class="alert alert-primary mb-0 text-center" role="alert">Bought!</div>
+        </header>
+    {% elif referrer_path == 'sell' %}
+        <header>
+            <div class="alert alert-primary mb-0 text-center" role="alert">Sold!</div>
+        </header>
+    {% elif referrer_path == 'register' %}
+        <header>
+            <div class="alert alert-primary mb-0 text-center" role="alert">Registered!</div>
+        </header>
+    {% else %}
+        <header></header>
+    {% endif %}
+#}
+
+{% block main %}
+<main class="container py-5 text-center">
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row_sns, row_mp, row_amt in symbol_name_share|zip(symbol_market_price, each_share_total_amount) %}
+            <tr>
+                <td>{{ row_sns["symbol"] }}</td>
+                <td>{{ row_sns["name"] }}</td>
+                <td>{{ row_sns["shares"] }}</td>
+                <td>{{ row_mp | usd }}</td>
+                <td>{{ row_amt | usd }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
+                <td class="border-0 ">{{ cash[0]['cash'] | usd }}</td>
+            </tr>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
+                <td class="border-0 ">{{ net_asset_value | usd }}</td>
+            </tr>
+        </tfoot>
+    </table>
+</main>
+
+
+{% endblock %}
